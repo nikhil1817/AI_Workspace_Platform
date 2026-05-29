@@ -1,0 +1,10 @@
+[
+  {
+    "question": "What is the document mainly about?",
+    "expected_keywords": ["document", "main", "about"]
+  },
+  {
+    "question": "What are the key points mentioned?",
+    "expected_keywords": ["key", "points"]
+  }
+]
