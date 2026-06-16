@@ -1,219 +1,286 @@
-# AI_Workspace_Platform
+# Team Collaboration Platform
 
-A production-style Retrieval-Augmented Generation (RAG) platform designed to evaluate AI reliability through grounding checks, hallucination detection, retrieval quality scoring, and automated evaluation metrics.
+A production-style Team Collaboration Platform inspired by Jira, Trello, and Slack. The platform enables teams to create workspaces, manage projects, track tasks, collaborate through comments, upload files, and monitor activities in real time.
 
-Unlike basic RAG systems, this platform measures whether generated answers are trustworthy and grounded in retrieved context.
+## Features
+
+### Authentication & Security
+
+* User Registration
+* User Login
+* Spring Security Integration
+
+### Workspace Management
+
+* Create Workspaces
+* View Workspace Details
+* Workspace Ownership Management
+
+### Project Management
+
+* Create Projects within Workspaces
+* View Project Details
+* Project Organization and Tracking
+
+### Task Management
+
+* Create Tasks
+* Update Task Status
+* Delete Tasks
+* Task Tracking Workflow
+
+### Collaboration Features
+
+* Task Comments
+* Real-Time Updates using WebSockets
+* Activity Feed Tracking
+
+### File Management
+
+* Upload Files to Tasks
+* View Uploaded Files
+* File Metadata Storage
+
+### Redis Integration
+
+* Activity Feed Caching
+* Recent Activity Tracking
+* Event Logging
+
+### Containerization
+
+* Dockerized Backend
+* Dockerized Frontend
+* Docker Compose Setup
+* PostgreSQL Container
+* Redis Container
 
 ---
 
-# Features
+## Tech Stack
 
-- PDF document ingestion
-- Semantic retrieval using embeddings
-- Context-aware question answering
-- Hallucination detection
-- Groundedness scoring
-- Retrieval quality metrics
-- Latency tracking
-- FastAPI backend
-- Streamlit frontend
-- Automated evaluation pipeline
+### Frontend
 
----
+* Next.js
+* React
+* TypeScript
 
-# Tech Stack
+### Backend
 
-## Backend
+* Spring Boot
+* Spring Security
+* Spring Data JPA
+* WebSocket
 
-- Python
-- FastAPI
-- Uvicorn
+### Database
 
-## AI / Retrieval
+* PostgreSQL
 
-- OpenAI APIs
-- Embeddings
-- Retrieval-Augmented Generation (RAG)
-- Vector Similarity Search
+### Cache & Messaging
 
-## Evaluation
+* Redis
 
-- Hallucination Detection
-- Groundedness Scoring
-- Retrieval Metrics
-- Keyword Accuracy Checks
+### DevOps
 
-## Frontend
-
-- Streamlit
+* Docker
+* Docker Compose
 
 ---
 
-# Project Structure
+## Architecture
+
+Frontend (Next.js)
+↓
+REST APIs
+↓
+Spring Boot Backend
+↓
+PostgreSQL Database
+
+WebSocket
+↓
+Real-Time Updates
+
+Redis
+↓
+Activity Feed Tracking
+
+Docker
+↓
+Containerized Deployment
+
+---
+
+## Project Structure
 
 ```text
-rag-evaluation-platform/
+full/
 │
-├── app.py
-├── requirements.txt
-├── README.md
-├── .gitignore
+├── backend/
+│   ├── controller/
+│   ├── service/
+│   ├── repository/
+│   ├── entity/
+│   └── config/
 │
 ├── frontend/
-│   └── frontend.py
-│
-├── rag/
-│   ├── indexer.py
-│   └── retriever.py
-│
-├── eval/
-│   ├── evaluator.py
-│   └── test_cases.json
+│   ├── app/
+│   ├── components/
+│   └── lib/
 │
 ├── screenshots/
-│   ├── img1.png
-│   └── img2.png
+│
+├── docker-compose.yml
+└── README.md
+```
+
+## Screenshots
+
+### Home Page
+
+![Home Page](screenshots/Home_Page.png)
+
+### Login Page
+
+![Login Page](screenshots/login.png)
+
+### Dashboard
+
+![Dashboard](screenshots/Dashboards.png)
+
+### Task Management
+
+![Tasks](screenshots/Tasks.png)
+
+### PostgreSQL Database
+
+![PostgreSQL](screenshots/Postgre.png)
+
+### Docker Containers
+
+![Docker](screenshots/Docker.png)
+
+---
+
+## API Modules
+
+### Authentication
+
+```http
+POST /api/auth/register
+POST /api/auth/login
+```
+
+### Workspaces
+
+```http
+GET /api/workspaces
+POST /api/workspaces
+PUT /api/workspaces/{id}
+DELETE /api/workspaces/{id}
+```
+
+### Projects
+
+```http
+GET /api/projects
+POST /api/projects
+PUT /api/projects/{id}
+DELETE /api/projects/{id}
+```
+
+### Tasks
+
+```http
+GET /api/tasks
+POST /api/tasks
+PUT /api/tasks/{id}
+DELETE /api/tasks/{id}
+```
+
+### Comments
+
+```http
+GET /api/comments/task/{taskId}
+POST /api/comments
+```
+
+### File Uploads
+
+```http
+POST /api/files/upload
+GET /api/files/task/{taskId}
+```
+
+### Activity Feed
+
+```http
+GET /api/activities
 ```
 
 ---
 
-# Screenshots
+## Running Locally
 
-## Upload + Question Answering
+### Clone Repository
 
-![UI](screenshots/img1.png)
+```bash
+git clone <repository-url>
+cd Team-Collaboration-Platform
+```
 
-## Evaluation Metrics
+### Start Application
 
-![Metrics](screenshots/img2.png)
+```bash
+docker-compose up --build
+```
 
----
-
-# How It Works
+### Frontend
 
 ```text
-User Question
-      ↓
-Embedding Generation
-      ↓
-Vector Retrieval
-      ↓
-Top-K Chunks
-      ↓
-LLM Answer Generation
-      ↓
-Evaluation Pipeline
-      ↓
-Grounding + Hallucination Checks
+http://localhost:3000
 ```
 
----
-
-# Evaluation Metrics
-
-The system automatically computes:
-
-- Groundedness Score
-- Hallucination Risk
-- Retrieval Similarity
-- Latency
-- Keyword Accuracy
-
-Example:
-
-```json
-{
-  "groundedness_score": 0.333,
-  "hallucination_risk": "MEDIUM",
-  "latency_seconds": 3.35
-}
-```
-
----
-
-# Installation
-
-Clone:
-
-```bash
-git clone YOUR_REPO_URL
-cd rag-evaluation-platform
-```
-
-Create virtual environment:
-
-```bash
-python3 -m venv venv
-source venv/bin/activate
-```
-
-Install dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
----
-
-# Setup API Key
-
-Create:
+### Backend
 
 ```text
-.env
-```
-
-Add:
-
-```env
-OPENAI_API_KEY=your_key_here
+http://localhost:8080
 ```
 
 ---
 
-# Run Backend
+## Current Implementation
 
-```bash
-uvicorn app:app --reload
-```
-
-Open:
-
-```text
-http://127.0.0.1:8000/docs
-```
-
----
-
-# Run Frontend
-
-New terminal:
-
-```bash
-source venv/bin/activate
-streamlit run frontend/frontend.py
-```
-
-Frontend:
-
-```text
-http://localhost:8501
-```
+* User Authentication
+* Workspace Management
+* Project Management
+* Task Management
+* Comments System
+* File Uploads
+* Activity Feed
+* Redis Integration
+* WebSocket Integration
+* Docker Deployment
 
 ---
 
-# Future Improvements
+## Future Enhancements
 
-- Hybrid Search
-- Metadata Filtering
-- LLM-as-Judge Evaluation
-- Prompt Evaluation
-- Multi-document Support
-- Reranking Pipelines
-- Docker Deployment
+* JWT Authentication
+* Role-Based Access Control
+* Kanban Drag-and-Drop Board
+* Analytics Dashboard
+* Email Notifications
+* AWS Deployment (EC2, RDS, S3)
+* CI/CD Pipeline
+* Monitoring and Logging
 
 ---
 
-# Resume Description
+## Author
 
-Built a production-style RAG Evaluation Platform using FastAPI, Streamlit, and OpenAI APIs with hallucination detection, grounding checks, retrieval quality scoring, and automated reliability evaluation workflows.
+**Nikhil Krishnaprasad**
+
+Master's in Computer Science | Full Stack & Backend Developer
+
+GitHub: https://github.com/nikhil1817
