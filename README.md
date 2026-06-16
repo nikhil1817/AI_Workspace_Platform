@@ -137,27 +137,21 @@ full/
 ## Screenshots
 
 ### Home Page
-
 ![Home Page](Screenshots/Home_Page.png)
 
 ### Login Page
-
 ![Login Page](Screenshots/login.png)
 
 ### Dashboard
-
 ![Dashboard](Screenshots/Dashboards.png)
 
 ### Task Management
-
 ![Tasks](Screenshots/Tasks.png)
 
 ### PostgreSQL Database
-
 ![PostgreSQL](Screenshots/Postgre.png)
 
 ### Docker Containers
-
 ![Docker](Screenshots/Docker.png)
 
 ---
