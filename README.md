@@ -138,27 +138,27 @@ full/
 
 ### Home Page
 
-![Home Page](screenshots/Home_Page.png)
+![Home Page](Screenshots/Home_Page.png)
 
 ### Login Page
 
-![Login Page](screenshots/login.png)
+![Login Page](Screenshots/login.png)
 
 ### Dashboard
 
-![Dashboard](screenshots/Dashboards.png)
+![Dashboard](Screenshots/Dashboards.png)
 
 ### Task Management
 
-![Tasks](screenshots/Tasks.png)
+![Tasks](Screenshots/Tasks.png)
 
 ### PostgreSQL Database
 
-![PostgreSQL](screenshots/Postgre.png)
+![PostgreSQL](Screenshots/Postgre.png)
 
 ### Docker Containers
 
-![Docker](screenshots/Docker.png)
+![Docker](Screenshots/Docker.png)
 
 ---
 
