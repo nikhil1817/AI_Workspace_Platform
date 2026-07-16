@@ -1,4 +1,4 @@
-# AI Workspace Platform
+# AI Workspace Framework
 
 A production-style AI Workspace Platform that integrates Retrieval-Augmented Generation (RAG), vector search, conversational AI, evaluation pipelines, metrics tracking, and modern frontend interfaces into a unified AI application ecosystem.
 
