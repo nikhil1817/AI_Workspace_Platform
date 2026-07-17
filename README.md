@@ -113,13 +113,13 @@ Final Response
 ## Screenshots
 
 ### Home Interface
-![Home](screenshots/home.png)
+![Home](Screenshots/home.png)
 
 ### AI Evaluation Dashboard
-![Evaluation](screenshots/evaluation.png)
+![Evaluation](Screenshots/evaluation.png)
 
 ### Knowledge Retrieval
-![Retrieval](screenshots/retrieval.png)
+![Retrieval](Screenshots/retrieval.png)
 
 ## Repository Structure
 
