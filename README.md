@@ -110,6 +110,17 @@ Final Response
 
 ---
 
+## Screenshots
+
+### Home Interface
+![Home](screenshots/home.png)
+
+### AI Evaluation Dashboard
+![Evaluation](screenshots/evaluation.png)
+
+### Knowledge Retrieval
+![Retrieval](screenshots/retrieval.png)
+
 ## Repository Structure
 
 ```text
