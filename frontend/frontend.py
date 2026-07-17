@@ -3,7 +3,7 @@ import requests
 
 API_URL = "http://127.0.0.1:8000"
 
-st.title("Production RAG Evaluation Platform")
+st.title("AI Workspace Framework")
 
 st.write("Upload a PDF, ask questions, and inspect reliability metrics.")
 
